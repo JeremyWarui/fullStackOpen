@@ -1,0 +1,54 @@
+GET http://localhost:3001/api/persons
+
+###
+
+GET https://phonebook-cool-feather-1871.fly.dev/api/persons
+
+###
+
+GET http://localhost:3001/api/persons/6791c27d980419de5ddfc082
+
+###
+
+GET http://localhost:5001/api/persons/1
+
+
+###
+get http://localhost:5001/api/persons/10
+
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Donald Duck",
+    "number": "123-456-789"
+}
+
+
+###
+# POST http://localhost:5001/api/persons
+POST https://phonebook-cool-feather-1871.fly.dev/api/persons
+Content-Type: application/json
+
+{
+    "name": "Mickey Mouse",
+    "number": "123456789"
+}
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Liisa Marttinen",
+    "number": "040-2435630"
+}
+
+###
+DELETE http://localhost:3001/api/persons/6791c237980419de5ddfc07e
+
+
+# POST https://phonebook-cool-feather-1871.fly.dev/api/persons
+# Content-Type: application/json
