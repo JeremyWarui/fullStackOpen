@@ -1,0 +1,67 @@
+GET http://localhost:5000/api/notes
+
+
+###
+
+POST http://localhost:5000/api/notes
+content-type: application/json
+
+{
+    "content": "This is the content of my first note",
+    "important": false,
+    "userId": "679ae748e7f8a421efb1ba67"
+}
+
+
+###
+
+POST http://localhost:5000/api/notes
+Content-Type: application/json
+
+{
+    "content": "HTML is easy",
+    "important": true,
+    "userId": "679ae743e7f8a421efb1ba65"
+}
+
+
+
+###
+
+POST http://localhost:5000/api/notes
+Content-Type: application/json
+
+{
+    "content": "Browser can execute only JavaScript",
+    "important": false,
+    "userId": "679ae743e7f8a421efb1ba65"
+}
+
+
+###
+
+POST http://localhost:5000/api/notes
+Content-Type: application/json
+
+{
+    "content": "GET and POST are the most important methods of HTTP protocol",
+    "important": true,
+    "userId": "679ae743e7f8a421efb1ba65"
+}
+
+
+###
+
+DELETE http://localhost:5000/api/notes/6708341db7f9f5a9fbe5306b
+
+
+### create note using token
+
+POST http://localhost:5000/api/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI2NzlhZTc0M2U3ZjhhNDIxZWZiMWJhNjUiLCJpYXQiOjE3MzgyMDc3ODB9.3fg_e7tdHxSh8BQkz-Aa3U1nt7knPZ8agnlGP6NL5kI
+
+{
+    "content": "User authentication is an important feature",
+    "important": true
+}
