@@ -1,0 +1,53 @@
+### GET USERS
+GET http://localhost:3003/api/users
+
+
+### Create User 1
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "name": "John Doe",
+  "password": "password123"
+}
+
+### Create User 2
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "jane_smith",
+  "name": "Jane Smith",
+  "password": "securePassword456"
+}
+
+### Create User 3
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "mike_wilson",
+  "name": "Mike Wilson",
+  "password": "mikePass789"
+}
+
+### Create User 4
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "alice_jones",
+  "name": "Alice Jones",
+  "password": "alicePass123"
+}
+
+### Create User 5
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "bob_martin",
+  "name": "Bob Martin",
+  "password": "bob1234"
+}
