@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from "prop-types";
 import blogService from '../services/blogs.js'
 
 const Blog = ({ blog, user, deleteBlog, updateBlogLikes }) => {
@@ -45,18 +45,20 @@ const Blog = ({ blog, user, deleteBlog, updateBlogLikes }) => {
     <div style={blogStyle}>
       {blog.title} {blog.author}
       <button onClick={toggleVisibility}>{btnText}</button>
-      <div>{blog.url}</div>
-      <div>
-        likes {blog.likes} <button onClick={handleLikes}>like</button>
+      <div className='blog-details'>
+        <div>{blog.url}</div>
+        <div>
+          likes {blog.likes} <button onClick={handleLikes}>like</button>
+        </div>
+        {blog.user && blog.user.name && <div>{blog.user.name}</div>}
+        {blog.user && blog.user.name === user.name
+          ? (
+            <button onClick={handleRemove}>remove</button>
+            )
+          : (
+              ''
+            )}
       </div>
-      {blog.user && blog.user.name && <div>{blog.user.name}</div>}
-      {blog.user && blog.user.name === user.name
-        ? (
-          <button onClick={handleRemove}>remove</button>
-          )
-        : (
-            ''
-          )}
     </div>
   )
 
@@ -72,11 +74,9 @@ const Blog = ({ blog, user, deleteBlog, updateBlogLikes }) => {
   )
 }
 
-
-Blog.propTypes = {
-  deleteBlog: PropTypes.func.isRequired,
-  updateBlogLikes: PropTypes.func.isRequired
-}
-
+// Blog.propTypes = {
+//   deleteBlog: PropTypes.func.isRequired,
+//   updateBlogLikes: PropTypes.func.isRequired,
+// };
 
 export default Blog

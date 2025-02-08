@@ -4,6 +4,7 @@ import blogService from './services/blogs'
 import loginService from './services/login'
 import Togglable from './components/Togglable'
 import BlogForm from './components/BlogForm'
+import loginForm from './components/LoginForm'
 import Notification from './components/Notification'
 
 const App = () => {
@@ -85,38 +86,16 @@ const App = () => {
   }
 
   const updateBlogLikes = (updatedBlog) => {
-    setBlogs(blogs.map((blog) => (blog.id === updatedBlog.id ? updatedBlog : blog)))
+    setBlogs(
+      blogs.map((blog) => (blog.id === updatedBlog.id ? updatedBlog : blog))
+    )
   }
-
-  const loginForm = () => (
-    <form onSubmit={handleLogin}>
-      <div>
-        username:{' '}
-        <input
-          type='text'
-          value={username}
-          name='username'
-          onChange={({ target }) => setUsername(target.value)}
-        />
-      </div>
-      <div>
-        password:{' '}
-        <input
-          type='password'
-          value={password}
-          name='password'
-          onChange={({ target }) => setPassword(target.value)}
-        />
-      </div>
-      <button type='submit'>login</button>
-    </form>
-  )
 
   if (!user) {
     return (
       <div>
         <h2>Log in to application</h2>
-        {loginForm()}
+        {loginForm(handleLogin, username, setUsername, setPassword, password)}
       </div>
     )
   }
@@ -132,7 +111,13 @@ const App = () => {
         <BlogForm createBlog={addNewBlog} />
       </Togglable>
       {blogs.map((blog) => (
-        <Blog key={blog.id} blog={blog} user={user} deleteBlog={deleteBlog} updateBlogLikes={updateBlogLikes} />
+        <Blog
+          key={blog.id}
+          blog={blog}
+          user={user}
+          deleteBlog={deleteBlog}
+          updateBlogLikes={updateBlogLikes}
+        />
       ))}
     </div>
   )
