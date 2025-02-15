@@ -1,4 +1,4 @@
-const loginForm = ({
+const LoginForm = ({
   handleLogin,
   username,
   password,
@@ -10,6 +10,7 @@ const loginForm = ({
       username:{' '}
       <input
         type='text'
+        data-testid='username'
         value={username}
         name='username'
         onChange={({ target }) => setUsername(target.value)}
@@ -21,6 +22,7 @@ const loginForm = ({
         type='password'
         value={password}
         name='password'
+        data-testid='password'
         onChange={({ target }) => setPassword(target.value)}
       />
     </div>
@@ -28,4 +30,4 @@ const loginForm = ({
   </form>
 )
 
-export default loginForm
+export default LoginForm

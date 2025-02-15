@@ -4,7 +4,7 @@ import blogService from './services/blogs'
 import loginService from './services/login'
 import Togglable from './components/Togglable'
 import BlogForm from './components/BlogForm'
-import loginForm from './components/LoginForm'
+import LoginForm from './components/LoginForm'
 import Notification from './components/Notification'
 
 const App = () => {
@@ -95,7 +95,13 @@ const App = () => {
     return (
       <div>
         <h2>Log in to application</h2>
-        {loginForm(handleLogin, username, setUsername, setPassword, password)}
+        <LoginForm
+          handleLogin={handleLogin}
+          username={username}
+          setPassword={setPassword}
+          setUsername={setUsername}
+          password={password}
+        />
       </div>
     )
   }
@@ -110,7 +116,7 @@ const App = () => {
       <Togglable buttonLabel='create new blog'>
         <BlogForm createBlog={addNewBlog} />
       </Togglable>
-      {blogs.map((blog) => (
+      {blogs.sort((a, b) => b.likes - a.likes).map((blog) => (
         <Blog
           key={blog.id}
           blog={blog}
