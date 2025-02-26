@@ -1,0 +1,144 @@
+GET http://localhost:3003/api/blogs
+
+
+###
+
+GET http://localhost:3003/api/blogs/6797035d1c0adb5bdf02f442
+
+
+###
+
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "Understanding JavaScript Closures",
+    "author": "John Doe",
+    "url": "https://example.com/js-closures",
+    "likes": 35
+}
+
+
+###
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "A Guide to Responsive Web Design",
+    "author": "Jane Smith",
+    "url": "https://example.com/responsive-design",
+    "likes": 52
+}
+
+###
+
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "Introduction to GraphQL",
+    "author": "Alice Johnson",
+    "url": "https://example.com/graphql-intro",
+    "likes": 28
+}
+
+
+###
+
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "The Future of Web Performance",
+    "author": "Ilya Grigorik",
+    "url": "http://blog.highperfweb.com/future-web-performance",
+    "likes": 0,
+}
+
+
+###
+
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "Understanding JavaScript Event Loop",
+    "author": "Kyle Simpson",
+    "url": "https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/event-loop.md",
+    "likes": 0,
+    "userId": "679bbad89c4ce9986a5504c4"
+}
+
+
+###
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "Optimizing Frontend Performance: Tips and Tricks",
+    "author": "Addy Osmani",
+    "url": "https://developers.google.com/web/fundamentals/performance",
+    "likes": 0,
+    "userId": "679bbae09c4ce9986a5504c6"
+}
+
+
+### post using token 
+
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pa2Vfd2lsc29uIiwiaWQiOiI2NzliYmFlNTljNGNlOTk4NmE1NTA0YzgiLCJpYXQiOjE3MzgyOTMzNjJ9.pzNuQzVxLdwv76_moB-JElX3Jm15736NsMhuCrlM_-k
+
+{
+    "title": "Improving Web Accessibility: Best Practices",
+    "author": "Sarah Wells",
+    "url": "https://web.dev/accessibility/",
+    "likes": 10
+}
+
+
+### post using token 
+
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiaWQiOiI2NzliYmFkODljNGNlOTk4NmE1NTA0YzQiLCJpYXQiOjE3MzgyOTQ0MjcsImV4cCI6MTczODI5ODAyN30.ZhidN2J-tN6K_u-v0WTB2-beUF6oNYnJ-EFZLNhaeBg
+
+{
+  "title": "Mastering Node.js for Backend Development",
+  "author": "Jane Smith",
+  "url": "https://nodejs.org/en/docs/",
+  "likes": 40
+}
+
+
+
+### delete using token 
+
+DELETE http://localhost:3003/api/blogs/679c41100d0d0ffc7ffad824
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pa2Vfd2lsc29uIiwiaWQiOiI2NzliYmFlNTljNGNlOTk4NmE1NTA0YzgiLCJpYXQiOjE3MzgzNTMwNjcsImV4cCI6MTczODM1NjY2N30.NdHXreiczf4eY55_tQoA5eoWX5FB4l26YmKO5IecxL0
+
+
+###
+
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pa2Vfd2lsc29uIiwiaWQiOiI2NzliYmFlNTljNGNlOTk4NmE1NTA0YzgiLCJpYXQiOjE3MzgzNTMwNjcsImV4cCI6MTczODM1NjY2N30.NdHXreiczf4eY55_tQoA5eoWX5FB4l26YmKO5IecxL0
+
+{
+    "title": "Introduction to GraphQL",
+    "author": "Alice Johnson",
+    "url": "https://example.com/graphql-intro",
+    "likes": 28
+}
+
+
+
+
+###
+
+POST http://localhost:3003/api/blogs/67ba346804d3ac67a5b4b8dd/comments
+Content-Type: application/json
+
+{
+    "comment": "Wow! Mindblowing, thanks"
+}
