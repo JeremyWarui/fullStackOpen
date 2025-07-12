@@ -65,6 +65,11 @@ app.get('/api/persons', (req, res) => {
   })
 })
 
+/**
+ * Returns a single person by ID
+ * @param {string} id - The ID of the person to return
+ * @returns {Promise} A promise that resolves to the person object, or 404 if not found
+ */
 app.get('/api/persons/:id', (req, res) => {
   const id = req.params.id
   Person.findById(id).then((person) => {
@@ -72,6 +77,11 @@ app.get('/api/persons/:id', (req, res) => {
   })
 })
 
+/**
+ * Deletes a person by ID
+ * @param {string} id - The ID of the person to delete
+ * @returns {Promise} A promise that resolves to the deleted person object, or 404 if not found
+ */
 app.delete('/api/persons/:id', (req, res, next) => {
   const id = req.params.id
   Person.findByIdAndDelete(id)
@@ -81,6 +91,13 @@ app.delete('/api/persons/:id', (req, res, next) => {
     .catch((error) => next(error))
 })
 
+/**
+ * Creates a new person
+ * @param {Object} req - The request object
+ * @param {Object} res - The response object
+ * @param {Function} next - The next middleware function
+ * @returns {Promise} A promise that resolves to the created person object
+ */
 app.post('/api/persons', (req, res, next) => {
   const { name, number } = req.body
   if (!name || !number) {
@@ -97,6 +114,14 @@ app.post('/api/persons', (req, res, next) => {
     .catch((error) => next(error))
 })
 
+/**
+ * Updates a person by ID
+ * @param {string} id - The ID of the person to update
+ * @param {Object} req - The request object
+ * @param {Object} res - The response object
+ * @param {Function} next - The next middleware function
+ * @returns {Promise} A promise that resolves to the updated person object
+ */
 app.put('/api/persons/:id', (req, res, next) => {
   const id = req.params.id
   const { name, number } = req.body
